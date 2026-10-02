@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: shlok-polymers
+    runtime: node
+    rootDir: shlok-github-ready
+    buildCommand: bun install --frozen-lockfile && bun run build
+    startCommand: bun run start
+    healthCheckPath: /api
+    plan: free
+    envVars:
+      - key: BUN_VERSION
+        value: 1.3.4
+      - key: NODE_VERSION
+        value: 24.19.0
